@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-import plotly.graph_objects as go
 import numpy as np
 import joblib
 import os
@@ -9,7 +8,7 @@ import os
 # Load ML model
 @st.cache_resource
 def load_model():
-    model_path = os.path.join("model", "nutrition_model.pkl")
+    model_path = "nutrition_model.pkl"  # model langsung di root folder
     return joblib.load(model_path)
 
 model = load_model()
